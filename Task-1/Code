@@ -1,0 +1,63 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Task_1
+{
+    internal class student
+    {
+        String name;
+        String id;
+        String department;
+        float cgpa;
+
+        public student() { }
+
+        public String Name { get; set; }
+        public String Id { get; set; }
+        public String Department { get; set; }
+        public float Cgpa { get; set; }
+
+
+
+        public void showInfo()
+        {
+            Console.WriteLine("Name         :" + Name);
+            Console.WriteLine("ID           :" + Id);
+            Console.WriteLine("Department   :" + Department);
+            Console.WriteLine("CGPA         :" + Cgpa);
+        }
+        
+    }
+}
+
+//main
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Task_1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            student s1 = new student();
+
+            s1.Name = "MD RAFITH";
+            s1.Id = "22-64968-3";
+            s1.Department = "CSE";
+            s1.Cgpa = 3.39f;
+
+            s1.showInfo();
+
+
+
+            Console.ReadLine();
+        }
+    }
+}
