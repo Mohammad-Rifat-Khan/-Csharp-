@@ -1,0 +1,80 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Task_2
+{
+    internal class triangle
+    {
+        int x;
+        int y;
+        int z;
+
+        public int X { get; set; }
+        public int Y { get; set; }  
+        public int Z { get; set; }  
+
+        public string TestTriangle()
+        {
+            if (X==Y && Y==Z && X==Z)
+            {
+               String result = "Equilateral";
+                return result;
+            }
+
+            else if (X==Y || Y==Z || X==Z)
+            {
+                string result = "Isosceles";
+                return result;  
+            }
+
+            else
+            {
+                string result = "Scalene";
+                return result;
+            }
+        }
+
+        public void showinfo() {
+            Console.WriteLine("\nSide length-1    :"+X);
+            Console.WriteLine("Side length-2    :"+Y);
+            Console.WriteLine("Side length-3    :"+Z);
+            Console.WriteLine("\nTriangle Form  :"+TestTriangle());
+        }
+    }
+}
+
+//main
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Task_2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Enter the value of 1st side  :");
+            int x=Int32.Parse(Console.ReadLine());
+            Console.Write("Enter the value of 2nd side  :");
+            int y=Int32.Parse(Console.ReadLine());
+            Console.Write("Enter the value of 3rd side  :");
+            int z=Int32.Parse(Console.ReadLine());
+
+            triangle t1= new triangle();
+
+            t1.X = x;
+            t1.Y = y;   
+            t1.Z = z;
+            t1.showinfo();
+
+            Console.ReadKey();
+        }
+    }
+}
