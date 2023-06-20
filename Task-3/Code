@@ -1,0 +1,121 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Task_3
+{
+    internal class account
+    {
+        string accName;
+        string acid;
+        int balance=0;
+       
+           
+        
+
+        public string AccName { get; set; }
+        public string Acid { get; set; }
+        public int Balance { get;  set; }
+
+       
+        
+
+        public int Deposit(int amount)
+        {
+            if (amount > 0)
+            {
+                Balance += amount;
+                return Balance;
+            }
+            else
+            {
+                Console.WriteLine("Invalid input");
+                return 0;
+            }
+        }
+
+        public int Withdraw(int amount)
+        {
+            if (amount > 0 && amount <= Balance)
+            {
+                Balance -= amount;
+                return Balance;
+            }
+            else
+            {
+                Console.WriteLine("Invalid input or insufficient balance");
+                return 0;
+            }
+        }
+
+        public void Showinfo()
+        {
+            Console.WriteLine("Account Name: " + AccName);
+            Console.WriteLine("Account ID: " + Acid);
+            Console.WriteLine("Balance: " + Balance);
+        }
+    }
+ }
+ 
+//main
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Task_3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Enter account holder name    :");
+            string name=Console.ReadLine();
+
+            Console.Write("Enter account holder ID      :");
+            string id=Console.ReadLine();
+
+            Console.Write("Enter total balance          :");
+            int balance=Int32.Parse(Console.ReadLine());
+
+            account a1 = new account();
+
+            a1.AccName = name;
+            a1.Acid = id;
+            a1.Balance = balance;
+            a1.Showinfo();
+
+            Console.WriteLine("\nChoose 1 for Deposit          ||          Choose 2 for Withdraw");
+            Console.Write("\nEnter your Choice    :");
+            int choice = Int32.Parse(Console.ReadLine());
+
+            switch (choice)
+            {
+                case 1:
+                    Console.Write("\nEnter amount to deposit: ");
+                    int depositAmount = Int32.Parse(Console.ReadLine());
+                    a1.Deposit(depositAmount);
+                    break;
+
+                case 2:
+                    Console.Write("\nEnter amount to withdraw: ");
+                    int withdrawAmount = Int32.Parse(Console.ReadLine());
+                    a1.Withdraw(withdrawAmount);
+                    break;
+
+                default:
+                    Console.WriteLine("Invalid choice");
+                    break;
+            }
+
+            a1.Showinfo();
+
+            Console.ReadKey();
+        }
+    }
+    }
+
