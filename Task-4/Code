@@ -1,0 +1,53 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Task_4
+{
+    internal class course
+    {
+        private string courseName;
+        private string courseCode;
+        private int courseCredit;
+
+        public int Coursecredit{ get; set; }
+        public string Coursename{ get; set; }
+        public string Coursecode { get; set; }
+
+        public void showinfo() {
+            Console.WriteLine("Course name      :"+Coursename);
+            Console.WriteLine("Course credit    :" + Coursecredit);
+            Console.WriteLine("Course code      :"+Coursecode);
+        }
+    }
+}
+
+//main  
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Task_4
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            course c1 = new course();
+
+            c1.Coursename = "Object Oriented Programming-2";
+            c1.Coursecredit = 3;
+            c1.Coursecode = "CSC2210";
+            c1.showinfo();
+
+            Console.ReadKey();  
+        }
+    }
+}
+
+
